@@ -46,25 +46,32 @@ npm run dev
 ## 📁 Project Structure
 
 ```
+## 📁 Project Structure
+
 react-event-seat-booking/
 │
 ├─ src/
+│  │
 │  ├─ components/
-│  │  ├─ dateSelector/        # Date picker component
-│  │  ├─ eventDetails/         # Event list and details
-│  │  ├─ seatSelector/         # Seat selection interface
-│  │  ├─ eventBooking/         # Main parent component
-│  │  └─ bookingModal/         # Confirmation modal
+│  │  ├─ context/
+│  │  │  └─ bookingContext.jsx   # Global booking state (React Context)
+│  │  │
+│  │  ├─ dateSelector/           # Date selection component
+│  │  ├─ eventDetails/           # Event list and details view
+│  │  ├─ seatSelector/           # Seat selection interface
+│  │  ├─ eventBooking/           # Main layout container
+│  │  └─ bookingModal/           # Booking confirmation modal
 │  │
 │  ├─ data/
-│  │  └─ eventsData.js         # Event data source
+│  │  └─ eventsData.js           # Mock event data source
 │  │
-│  ├─ App.jsx
-│  ├─ main.jsx
-│  └─ index.css
+│  ├─ App.jsx                    # Root component
+│  ├─ main.jsx                   # Application entry point
+│  └─ index.css                  # Global styles
 │
 ├─ package.json
 └─ README.md
+
 ```
 
 ## 🎯 How to Use

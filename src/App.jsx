@@ -1,5 +1,5 @@
 import EventBooking from "./components/eventBooking";
-import BookingProvider from "./components/eventContext";
+import BookingProvider from "./context/eventContext";
 import "./index.css";
 
 function App() {
