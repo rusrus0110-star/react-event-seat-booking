@@ -54,7 +54,7 @@ react-event-seat-booking/
 │  │
 │  ├─ components/
 │  │  ├─ context/
-│  │  │  └─ bookingContext.jsx   # Global booking state (React Context)
+│  │  │  └─ eventContext/   # Global booking state (React Context)
 │  │  │
 │  │  ├─ dateSelector/           # Date selection component
 │  │  ├─ eventDetails/           # Event list and details view
