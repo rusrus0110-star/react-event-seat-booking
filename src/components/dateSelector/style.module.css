@@ -1,0 +1,202 @@
+.dateSelector {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.monthYear {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.navButton {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 8px;
+  color: #6366f1;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.navButton:hover {
+  background: #f0f0ff;
+  transform: scale(1.1);
+}
+
+.navButton:active {
+  transform: scale(0.95);
+}
+
+.weekDays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.weekDay {
+  text-align: center;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: #6b7280;
+  padding: 8px 0;
+}
+
+.daysGrid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.emptyDay {
+  aspect-ratio: 1;
+}
+
+.day {
+  aspect-ratio: 1;
+  border: 2px solid transparent;
+  background: #f9fafb;
+  border-radius: 12px;
+  cursor: not-allowed;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #d1d5db;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.day.available {
+  background: #ffffff;
+  border-color: #e5e7eb;
+  color: #374151;
+  cursor: pointer;
+}
+
+.day.available:hover {
+  border-color: #6366f1;
+  background: #f0f0ff;
+  transform: scale(1.05);
+}
+
+.day.selected {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border-color: #6366f1;
+  color: #ffffff;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.day.selected:hover {
+  background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+  transform: scale(1.05);
+}
+
+.legend {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  padding-top: 16px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.875rem;
+  color: #6b7280;
+}
+
+.legendDot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.availableDot {
+  background: #ffffff;
+  border: 2px solid #6366f1;
+}
+
+.selectedDot {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .dateSelector {
+    padding: 20px;
+  }
+
+  .monthYear {
+    font-size: 1.1rem;
+  }
+
+  .weekDay {
+    font-size: 0.8rem;
+  }
+
+  .day {
+    font-size: 0.875rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .dateSelector {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .header {
+    margin-bottom: 16px;
+  }
+
+  .monthYear {
+    font-size: 1rem;
+  }
+
+  .weekDay {
+    font-size: 0.75rem;
+    padding: 6px 0;
+  }
+
+  .daysGrid {
+    gap: 6px;
+    margin-bottom: 16px;
+  }
+
+  .day {
+    font-size: 0.8rem;
+    border-radius: 8px;
+  }
+
+  .legend {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .legendItem {
+    font-size: 0.8rem;
+  }
+}

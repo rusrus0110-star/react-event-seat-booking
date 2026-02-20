@@ -1,0 +1,318 @@
+.eventDetails {
+  width: 100%;
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin-bottom: 24px;
+}
+
+.eventsList {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+}
+
+.eventCard {
+  background: #ffffff;
+  border: 2px solid #e5e7eb;
+  border-radius: 16px;
+  padding: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.eventCard::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #6366f1, #8b5cf6);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.eventCard:hover {
+  border-color: #6366f1;
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.15);
+  transform: translateY(-4px);
+}
+
+.eventCard:hover::before {
+  transform: scaleX(1);
+}
+
+.eventCard.selected {
+  border-color: #6366f1;
+  background: linear-gradient(135deg, #f0f0ff 0%, #faf5ff 100%);
+  box-shadow: 0 8px 24px rgba(99, 102, 241, 0.2);
+}
+
+.eventCard.selected::before {
+  transform: scaleX(1);
+}
+
+.eventHeader {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 20px;
+}
+
+.eventIcon {
+  width: 48px;
+  height: 48px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  flex-shrink: 0;
+}
+
+.eventInfo {
+  flex: 1;
+}
+
+.eventTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0 0 6px 0;
+}
+
+.eventDescription {
+  font-size: 0.875rem;
+  color: #6b7280;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.eventMeta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 12px;
+}
+
+.metaItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  color: #374151;
+}
+
+.metaItem svg {
+  color: #6366f1;
+  flex-shrink: 0;
+}
+
+.eventFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.priceTag {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.priceLabel {
+  font-size: 0.75rem;
+  color: #6b7280;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-weight: 600;
+}
+
+.priceValue {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #6366f1;
+}
+
+.seatsInfo {
+  display: flex;
+  align-items: center;
+}
+
+.seatsBadge {
+  padding: 6px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.3px;
+}
+
+.seatsBadge.available {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.seatsBadge.soldOut {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.selectedIndicator {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.4);
+  animation: scaleIn 0.3s ease;
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.noEvents {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  text-align: center;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 2px dashed #e5e7eb;
+}
+
+.noEvents h3 {
+  margin: 20px 0 8px 0;
+  color: #374151;
+  font-size: 1.25rem;
+}
+
+.noEvents p {
+  color: #9ca3af;
+  margin: 0;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .title {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+  }
+
+  .eventsList {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .eventCard {
+    padding: 20px;
+  }
+
+  .eventTitle {
+    font-size: 1.1rem;
+  }
+
+  .priceValue {
+    font-size: 1.25rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .title {
+    font-size: 1.25rem;
+    margin-bottom: 16px;
+  }
+
+  .eventCard {
+    padding: 16px;
+  }
+
+  .eventHeader {
+    gap: 12px;
+    margin-bottom: 16px;
+  }
+
+  .eventIcon {
+    width: 40px;
+    height: 40px;
+  }
+
+  .eventIcon svg {
+    width: 20px;
+    height: 20px;
+  }
+
+  .eventTitle {
+    font-size: 1rem;
+  }
+
+  .eventDescription {
+    font-size: 0.8rem;
+  }
+
+  .eventMeta {
+    gap: 10px;
+    padding: 12px;
+    margin-bottom: 16px;
+  }
+
+  .metaItem {
+    font-size: 0.8rem;
+  }
+
+  .metaItem svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .eventFooter {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .priceValue {
+    font-size: 1.5rem;
+  }
+
+  .seatsBadge {
+    padding: 5px 10px;
+    font-size: 0.75rem;
+  }
+
+  .selectedIndicator {
+    width: 28px;
+    height: 28px;
+    top: 12px;
+    right: 12px;
+  }
+
+  .selectedIndicator svg {
+    width: 16px;
+    height: 16px;
+  }
+}

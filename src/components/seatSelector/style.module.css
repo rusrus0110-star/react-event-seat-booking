@@ -1,0 +1,381 @@
+.seatSelector {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.title {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.eventBadge {
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  border-radius: 20px;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+
+.seatsContainer {
+  margin-bottom: 32px;
+}
+
+.stage {
+  margin-bottom: 40px;
+  padding: 20px;
+  background: linear-gradient(180deg, #f0f0ff 0%, #ffffff 100%);
+  border-radius: 12px;
+}
+
+.seatsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+  gap: 16px;
+  justify-items: center;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.seat {
+  background: #f3f4f6;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: #9ca3af;
+  width: 80px;
+}
+
+.seat:hover {
+  border-color: #6366f1;
+  background: #ffffff;
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 8px 16px rgba(99, 102, 241, 0.2);
+}
+
+.seat.selected {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border-color: #6366f1;
+  color: #ffffff;
+  box-shadow: 0 8px 16px rgba(99, 102, 241, 0.3);
+}
+
+.seat.selected:hover {
+  transform: translateY(-4px) scale(1.05);
+  box-shadow: 0 12px 24px rgba(99, 102, 241, 0.4);
+}
+
+.seatLabel {
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.legend {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  padding: 24px;
+  background: #f9fafb;
+  border-radius: 12px;
+  margin-bottom: 32px;
+}
+
+.legendItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.875rem;
+  color: #374151;
+  font-weight: 500;
+}
+
+.legendSeat {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  border: 2px solid #e5e7eb;
+}
+
+.legendSeat.available {
+  background: #f3f4f6;
+  color: #9ca3af;
+}
+
+.legendSeat.selected {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  border-color: #6366f1;
+  color: #ffffff;
+}
+
+.summary {
+  background: linear-gradient(135deg, #f0f0ff 0%, #faf5ff 100%);
+  border: 2px solid #6366f1;
+  border-radius: 16px;
+  padding: 24px;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.summaryHeader {
+  margin-bottom: 20px;
+}
+
+.summaryHeader h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.summaryContent {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.summaryRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(99, 102, 241, 0.1);
+}
+
+.summaryRow.total {
+  border-bottom: none;
+  border-top: 2px solid #6366f1;
+  padding-top: 16px;
+  margin-top: 8px;
+}
+
+.summaryLabel {
+  font-size: 0.95rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.summaryRow.total .summaryLabel {
+  font-size: 1.1rem;
+  color: #1a1a1a;
+  font-weight: 700;
+}
+
+.summaryValue {
+  font-size: 0.95rem;
+  color: #374151;
+  font-weight: 600;
+}
+
+.summaryRow.total .summaryValue {
+  font-size: 1.5rem;
+  color: #6366f1;
+  font-weight: 700;
+}
+
+.bookButton {
+  width: 100%;
+  padding: 16px;
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.3);
+}
+
+.bookButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(99, 102, 241, 0.4);
+}
+
+.bookButton:active {
+  transform: translateY(0);
+}
+
+.noSelection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 20px;
+  text-align: center;
+  background: #ffffff;
+  border-radius: 16px;
+  border: 2px dashed #e5e7eb;
+}
+
+.noSelection h3 {
+  margin: 24px 0 8px 0;
+  color: #374151;
+  font-size: 1.25rem;
+}
+
+.noSelection p {
+  color: #9ca3af;
+  margin: 0;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .seatSelector {
+    padding: 24px;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  .seatsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(70px, 1fr));
+    gap: 12px;
+  }
+
+  .seat {
+    width: 70px;
+    padding: 10px;
+  }
+
+  .legend {
+    gap: 24px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .seatSelector {
+    padding: 16px;
+    border-radius: 12px;
+  }
+
+  .header {
+    margin-bottom: 24px;
+  }
+
+  .title {
+    font-size: 1.25rem;
+  }
+
+  .eventBadge {
+    padding: 6px 12px;
+    font-size: 0.8rem;
+  }
+
+  .stage {
+    margin-bottom: 24px;
+    padding: 16px;
+  }
+
+  .seatsGrid {
+    grid-template-columns: repeat(auto-fill, minmax(60px, 1fr));
+    gap: 10px;
+  }
+
+  .seat {
+    width: 60px;
+    padding: 8px;
+  }
+
+  .seat svg {
+    width: 32px;
+    height: 32px;
+  }
+
+  .seatLabel {
+    font-size: 0.75rem;
+  }
+
+  .legend {
+    flex-direction: column;
+    gap: 12px;
+    padding: 16px;
+    margin-bottom: 24px;
+  }
+
+  .legendSeat {
+    width: 32px;
+    height: 32px;
+  }
+
+  .legendSeat svg {
+    width: 24px;
+    height: 24px;
+  }
+
+  .summary {
+    padding: 16px;
+  }
+
+  .summaryHeader h3 {
+    font-size: 1.1rem;
+  }
+
+  .summaryRow {
+    padding: 10px 0;
+  }
+
+  .summaryLabel {
+    font-size: 0.85rem;
+  }
+
+  .summaryValue {
+    font-size: 0.85rem;
+  }
+
+  .summaryRow.total .summaryLabel {
+    font-size: 1rem;
+  }
+
+  .summaryRow.total .summaryValue {
+    font-size: 1.25rem;
+  }
+
+  .bookButton {
+    padding: 14px;
+    font-size: 0.9rem;
+  }
+}
